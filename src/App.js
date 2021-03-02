@@ -8,12 +8,14 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <div>
+        <Link to="/" >Home</Link>
+        <Link to="/users" >Users</Link>
+        <Link to="/about" >About</Link>
+      </div>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/users" component={Users} />
-        {/* <Link to="/" >Home</Link> */}
-        {/* <Link to="/about" >About</Link> */}
-        {/* <Link to="/users" >Users</Link> */}
+        <Route path="/users/:id" render={(props) => <Users {...props} greetingMessage="Good Morning" />} />
       </BrowserRouter>
     );
   }
